@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<robot name="blackbox">
+    <static>true</static>
+  <link name="link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+          <mesh filename="file://$(env HOME)/.uwsim/data/objects/blackbox_uib_trimesh.dae"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="8.0"/>
+      <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+     <geometry>
+          <mesh filename="file://$(env HOME)/.uwsim/data/objects/blackbox_uib_trimesh.dae"/>
+      </geometry>
+    </collision>
+    <buoyancy>
+    <compensation>0</compensation>    
+    </buoyancy>
+  </link>
+</robot>

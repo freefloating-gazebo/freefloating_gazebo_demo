@@ -1,0 +1,25 @@
+controllers:
+    config:
+        joints:
+            state: joint_states
+            setpoint: joint_setpoint
+            cascaded_position: False
+            dynamic_reconfigure: False
+    Slew:
+        velocity: {p: 1.0, i: 0.1, d: 0.0}
+        position: {p: 10, i: 0.1, d: 0}
+    Shoulder:
+        velocity: {p: 1.0, i: 0.1, d: 0.0}
+        position: {p: 10, i: 0.1, d: 0}
+    Elbow:
+        velocity: {p: 1.0, i: 0.1, d: 0.0}
+        position: {p: 10, i: 0.1, d: 0}
+    JawRotate:
+        velocity: {p: 1.0, i: 0.1, d: 0.0}
+        position: {p: 10, i: 0.1, d: 0}
+    JawOpening:
+        velocity: {p: 1.0, i: 0.1, d: 0.0}
+        position: {p: 10, i: 0.1, d: 0}
+    JawOpening2:
+        velocity: {p: 1.0, i: 0.1, d: 0.0}
+        position: {p: 10, i: 0.1, d: 0}

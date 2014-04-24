@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Test joints in UWsim with joint_state_publisher -->
+    
+    <param name="robot_description" command="$(find xacro)/xacro.py $(find freefloating_gazebo_demo)/urdf/g500arm5e.xacro"/>
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="true">
+        <param name="use_gui" value="True"/>
+        <remap from="joint_states" to="/g500arm5e/joint_states" />
+    </node>
+</launch>
