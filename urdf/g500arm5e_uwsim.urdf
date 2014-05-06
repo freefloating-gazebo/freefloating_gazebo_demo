@@ -45,7 +45,7 @@
     <axis xyz="0 0 -1"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <dynamics damping="0.8"/>
-    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1"/>
+    <limit effort="10" lower="-1.57079632679" upper="1.57079632679" velocity="1"/>
   </joint>
   <link name="part2">
     <visual>
@@ -61,7 +61,7 @@
     <axis xyz="0 1 0"/>
     <origin rpy="0 0.209 0" xyz="0.077 0 -0.130"/>
     <dynamics damping="0.8"/>
-    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1"/>
+    <limit effort="10" lower="0" upper="1.57079632679" velocity="1"/>
   </joint>
   <link name="part3">
     <visual>
@@ -77,7 +77,7 @@
     <axis xyz="0 1 0"/>
     <origin rpy=" 0 0.262 0 " xyz="0.44278 0 0"/>
     <dynamics damping="0.8"/>
-    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1"/>
+    <limit effort="10" lower="0.314159265359" upper="1.57079632679" velocity="1"/>
   </joint>
   <link name="part4_base">
     <visual>
@@ -93,7 +93,7 @@
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 0" xyz="0.320 0 0.077 "/>
     <dynamics damping="0.8"/>
-    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1"/>
+    <limit effort="10" lower="-1.57079632679" upper="1.57079632679" velocity="1"/>
   </joint>
   <link name="part4_jaw1">
     <visual>
@@ -108,8 +108,8 @@
     <child link="part4_jaw1"/>
     <axis xyz="0 -1 0"/>
     <origin rpy="0 0 0" xyz="0.07 0 0.04"/>
-    <dynamics damping="0.8"/>
-    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1"/>
+    <dynamics damping="0.3"/>
+    <limit effort="10" lower="0" upper="1.57079632679" velocity=".5"/>
   </joint>
   <link name="part4_jaw2">
     <visual>
@@ -124,7 +124,7 @@
     <child link="part4_jaw2"/>
     <axis xyz="0 1 0"/>
     <origin rpy="0 0 0" xyz="0.07 0 -0.04"/>
-    <dynamics damping="0.8"/>
-    <limit effort="10" lower="-3.14159265359" upper="3.14159265359" velocity="1"/>
+    <dynamics damping="0.3"/>
+    <limit effort="10" lower="0" upper="1.57079632679" velocity=".5"/>
   </joint>
 </robot>

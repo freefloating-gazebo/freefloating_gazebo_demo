@@ -10,7 +10,7 @@
   </group>
   <group>
     <param name="blackbox/robot_description" command="$(find xacro)/xacro.py $(find freefloating_gazebo_demo)/urdf/bbox.xacro"/>
-    <node name="blackbox_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model blackbox -param blackbox/robot_description -x 5 -y 7 -z -13.3 -R 0 -P 3.1415 -Y 0"/>
+    <node name="blackbox_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model blackbox -param blackbox/robot_description -x 5 -y 7 -z -13.2 -R 0 -P 0 -Y 0"/>
   </group>
   <group>
     <param name="terrain_description" command="$(find xacro)/xacro.py $(find freefloating_gazebo_demo)/terrain/shipwreck/terrain.sdf"/>

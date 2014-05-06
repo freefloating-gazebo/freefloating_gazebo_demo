@@ -150,12 +150,6 @@
         <mesh filename="file://$(env HOME)/.uwsim/data/robot/ARM5E/ARM5E_part4_jaw1.dae"/>
       </geometry>
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="file://$(env HOME)/.uwsim/data/robot/ARM5E/ARM5E_part4_jaw1.dae"/>
-      </geometry>
-    </collision>
     <xacro:sph_inertial mass="${jaw_mass}" radius="${jaw_radius}" />
     <buoyancy><compensation>1.0</compensation></buoyancy>
   </link>
@@ -176,12 +170,6 @@
         <mesh filename="file://$(env HOME)/.uwsim/data/robot/ARM5E/ARM5E_part4_jaw2.dae"/>
       </geometry>
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="file://$(env HOME)/.uwsim/data/robot/ARM5E/ARM5E_part4_jaw2.dae"/>
-      </geometry>
-    </collision>
     <xacro:sph_inertial mass="${jaw_mass}" radius="${jaw_radius}" />
     <buoyancy><compensation>1.0</compensation></buoyancy>
     </link>

@@ -137,20 +137,20 @@ int main(int argc, char ** argv)
             break;
         case ARM_CONTROL:
             state = BODY_APPROACH;
-            robot.MoveBody(5,6.7,-11.2,1,1,0,0);
+            robot.MoveBody(5.2,6.6,-11.5,1,1,0,0);
             cout << "Approaching body" << endl;
             state_wait = 15;
             break;
         case BODY_APPROACH:
             state = ARM_INTERVENTION;
             cout << "Preparing to grasp" << endl;
-            robot.MoveArm(0, 1.02, 1.15, 0, 0, 0);
+            robot.MoveArm(0, 1.154, .966, 0, .3, .3);
             state_wait = 10;
             break;
         case ARM_INTERVENTION:
             state = ARM_GRASP;
             cout << "Grasping black box" << endl;
-            robot.MoveArm(0, 1.02, 1.15, 0, 0, 0);
+            robot.MoveArm(0, 1.154, .966, 0, 0, 0);
             state_wait = 5;
             break;
         case ARM_GRASP:
@@ -168,8 +168,10 @@ int main(int argc, char ** argv)
             robot.Publish();
             ros::spinOnce();
             loop.sleep();
-
         }
+
+        if(state == BODY_UP)
+            break;
     }
 
 
