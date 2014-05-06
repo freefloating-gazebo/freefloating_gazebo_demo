@@ -21,7 +21,8 @@
       </geometry>
     </collision>
     <buoyancy>
-    <compensation>0</compensation>    
+    <compensation>0</compensation> 
+    <damping xyz="0 0 0"/>
     </buoyancy>
   </link>
 </robot>

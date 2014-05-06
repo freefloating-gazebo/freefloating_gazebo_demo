@@ -7,10 +7,17 @@
 
   <license>BSD</license>
 
-  <url type="website">https://github.com/ros-underwater/freefloating_gazebo_demo</url>
+  <url type="website">https://github.com/freefloating-gazebo/freefloating_gazebo_demo</url>
 
   <author>Olivier Kermorgant</author>
 
   <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>freefloating_gazebo</build_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>nav_msgs</run_depend>
 
 </package>

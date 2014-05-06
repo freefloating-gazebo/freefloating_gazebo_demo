@@ -5,6 +5,6 @@
     <param name="robot_description" command="$(find xacro)/xacro.py $(find freefloating_gazebo_demo)/urdf/g500arm5e.xacro"/>
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="true">
         <param name="use_gui" value="True"/>
-        <remap from="joint_states" to="/g500arm5e/joint_states" />
+        <remap from="joint_states" to="/g500arm5e/joint_setpoint" />
     </node>
 </launch>
