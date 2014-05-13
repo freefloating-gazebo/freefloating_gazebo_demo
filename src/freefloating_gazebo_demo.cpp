@@ -6,6 +6,7 @@
 #include <ros/ros.h>
 #include <ros/publisher.h>
 #include <ros/subscriber.h>
+#include <std_srvs/Empty.h>
 
 using std::cout;
 using std::endl;
@@ -96,7 +97,6 @@ protected:
 
 };
 
-
 typedef enum
 {
     MISSION_START, ARM_CONTROL, BODY_APPROACH, ARM_INTERVENTION, ARM_GRASP, BODY_UP
@@ -120,8 +120,14 @@ int main(int argc, char ** argv)
     current.y = .1;
     ros::Publisher current_publisher = ros_node.advertise<geometry_msgs::Vector3>("/gazebo/current", 1);
 
-    //
+    // Robot class
     Robot robot(ros_node);
+
+    // ensure physics are running
+    std_srvs::Empty srv;
+    ros::ServiceClient client = ros_node.serviceClient<std_srvs::Empty>("/gazebo/unpause_physics");
+    cout << "Unpausing physics" << endl;
+    client.call(srv);
 
     // main loop
     while(ros::ok())
@@ -173,9 +179,6 @@ int main(int argc, char ** argv)
         if(state == BODY_UP)
             break;
     }
-
-
-
 
 
 }
