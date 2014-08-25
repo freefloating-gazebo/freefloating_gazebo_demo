@@ -3,6 +3,7 @@ controllers:
         joints:
             state: joint_states
             setpoint: joint_setpoint
+            command: joint_command
             cascaded_position: False
             dynamic_reconfigure: True
     Slew:
