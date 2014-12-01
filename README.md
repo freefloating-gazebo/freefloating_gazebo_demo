@@ -10,7 +10,8 @@ The example can be run in three steps:
     `roslaunch freefloating_gazebo_demo g500arm5e.launch parse:=true`
 
 2. Launch the simulators  
-    This launches UWsim for the graphical part, and Gazebo to allow dynamic simulation. Gazebo is launched with the freefloating_gazebo_fluid and freefloating_gazebo_control plugins.  
+    This launches UWsim for the graphical part, and Gazebo to allow dynamic simulation.  
+    Gazebo is launched with the freefloating_gazebo_fluid and freefloating_gazebo_control plugins.  
     A pid_control node is also launched and allows position and velocity control of the robot body and joints.  
     - UWsim: `roslaunch freefloating_gazebo_demo g500arm5e.launch`  
     - Gazebo: `roslaunch freefloating_gazebo_demo g500arm5e_gazebo.launch uwsim:=true`
@@ -19,3 +20,9 @@ The example can be run in three steps:
     This will unpause the physics (that are paused by default) and run the open-loop recovery of the black box.  
     Due to open-loop behavior the recovery will not always be performed.  
     `rosrun freefloating_gazebo_demo freefloating_gazebo_demo`
+    
+4. Manual control  
+    The robot can also be controlled by hand using:  
+    `roslaunch `freefloating_gazebo_demo manual.launch`  
+    Two gui will appear, allowing to control the axes of the body and the joints of the arm.
+    
