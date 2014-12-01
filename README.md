@@ -5,7 +5,7 @@ This package contains an example of underwater robot using the freefloating_gaze
 
 The example can be run in three steps:
 
-- Synchronize UWsim and Gazebo files: roslaunch freefloating_gazebo_demo g500arm5e.launch parse:=true
+- Synchronize UWsim and Gazebo files: 'roslaunch freefloating_gazebo_demo g500arm5e.launch parse:=true'
 
 Will scan the launchfile to create urdf from xacro files to be used in UWsim
 

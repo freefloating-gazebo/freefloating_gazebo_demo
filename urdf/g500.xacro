@@ -52,31 +52,32 @@
     <!-- Gazebo plugin listens to the body-->
     <plugin name="freefloating_gazebo_control" filename="libfreefloating_gazebo_control.so">
         <switchService>switch</switchService>
-            <link>base_link</link>
-            <bodyCommandTopic>body_command</bodyCommandTopic>
-            <jointCommandTopic>joint_command</jointCommandTopic>      
-            
-            <!-- for each thruster, give the map to XYZ+RPY and the maximum effort -->
-            <thruster>
-                <map>-1 0 0 0 0 ${-body_width/2}</map>
-                <effort>30</effort>
-            </thruster>
-            <thruster>
-                <map>-1 0 0 0 0 ${body_width/2}</map>
-                <effort>30</effort>
-            </thruster>
-            <thruster>
-                <map>0 1 0 0 0 0</map>
-                <effort>30</effort>
-            </thruster>
-            <thruster>
-                <map>0 0 -1 0 0 0</map>
-                <effort>30</effort>
-            </thruster>
-            <thruster>
-                <map>0 0 -1 0 ${-2*X_cog} 0</map>
-                <effort>30</effort>
-            </thruster>       
+        <updateRate>100</updateRate>
+        <link>base_link</link>
+        <bodyCommandTopic>body_command</bodyCommandTopic>
+        <jointCommandTopic>joint_command</jointCommandTopic>      
+        
+        <!-- for each thruster, give the map to XYZ+RPY and the maximum effort -->
+        <thruster>
+            <map>-1 0 0 0 0 ${-body_width/2}</map>
+            <effort>30</effort>
+        </thruster>
+        <thruster>
+            <map>-1 0 0 0 0 ${body_width/2}</map>
+            <effort>30</effort>
+        </thruster>
+        <thruster>
+            <map>0 1 0 0 0 0</map>
+            <effort>30</effort>
+        </thruster>
+        <thruster>
+            <map>0 0 -1 0 0 0</map>
+            <effort>30</effort>
+        </thruster>
+        <thruster>
+            <map>0 0 -1 0 ${-2*X_cog} 0</map>
+            <effort>30</effort>
+        </thruster>       
     </plugin>
     </gazebo>
 
@@ -108,7 +109,7 @@
       <compensation>1.01</compensation>
       <origin xyz= "${X_cog} 0 ${body_height*body_bottom_mass/(2*body_top_mass+body_bottom_mass)/2}"/>
       <limit radius=".5"/>
-      <damping xyz="40 80 80"/>
+      <damping xyz="60 100 100"/>
   </buoyancy>
   </link>
 </robot>

@@ -3,7 +3,7 @@
 
   <!-- these are the arguments you can pass this launch file, for example paused:=true -->
   <arg name="parse" default="false"/>
-  <arg name="shaders" default="false"/>
+  <arg name="shaders" default="true"/>
   <!-- virtual arg for uwsim shaders -->
   <arg name="disableShaders" default="" if="$(arg shaders)"/>  
   <arg name="disableShaders" default="--disableShaders" unless="$(arg shaders)"/> 

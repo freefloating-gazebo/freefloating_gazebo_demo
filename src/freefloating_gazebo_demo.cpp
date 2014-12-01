@@ -137,7 +137,7 @@ int main(int argc, char ** argv)
             break;
         case ARM_CONTROL:
             state = BODY_APPROACH;
-            robot.MoveBody(5.05,6.7,-11.3,1,1,0,0);
+            robot.MoveBody(5.3,6.7,-11.3,1,1,0,0);
             cout << "Approaching body" << endl;
             state_wait = 15;
             break;
@@ -151,7 +151,7 @@ int main(int argc, char ** argv)
         case ARM_GRASP:
             state = BODY_UP;
             cout << "Going up" << endl;
-            robot.MoveBody(5.05, 6.7, -10, 1, 1, 0, 0);
+            robot.MoveBody(5.3, 6.7, -10, 1, 1, 0, 0);
           //  robot.MoveArm(0, 1.3, 1.5);
             state_wait = 1;
         default:
