@@ -23,6 +23,6 @@ The example can be run in three steps:
     
 4. Manual control  
     The robot can also be controlled by hand using:  
-    `roslaunch `freefloating_gazebo_demo manual.launch`  
+    `roslaunch freefloating_gazebo_demo manual.launch`  
     Two gui will appear, allowing to control the axes of the body and the joints of the arm.
     
