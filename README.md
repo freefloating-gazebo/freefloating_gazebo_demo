@@ -8,7 +8,6 @@ The example can be run in three steps:
 1. Synchronize UWsim and Gazebo files (to do once)
 
     This will scan the launchfile to create urdf from xacro files to be used in UWsim
-
     `roslaunch freefloating_gazebo_demo g500arm5e.launch parse:=true`
 
 2. Launch the simulators
