@@ -17,9 +17,10 @@ The example can be run in three steps:
 
     - UWsim: `roslaunch freefloating_gazebo_demo g500arm5e.launch`
     
-    - Gazebo without gui: `roslaunch freefloating_gazebo_demo g500arm5e_gazebo.launch uwsim:=true`
+    - Gazebo: `roslaunch freefloating_gazebo_demo g500arm5e_gazebo.launch uwsim:=true`
     
 3. Run the demo
+
     This will unpause the physics (that are paused by default) and run the open-loop recovery of the black box.
     Due to open-loop behavior the recovery will not always be performed.
 
