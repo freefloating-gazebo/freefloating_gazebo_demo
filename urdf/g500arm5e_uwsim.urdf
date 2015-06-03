@@ -133,4 +133,4 @@
     <child link="part7"/>
     <origin rpy="0 .6 0" xyz="0 .0 .06 "/>
   </joint>
-</robot>
+  </robot>

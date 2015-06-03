@@ -54,8 +54,6 @@
         <switchService>switch</switchService>
         <updateRate>100</updateRate>
         <link>base_link</link>
-        <bodyCommandTopic>body_command</bodyCommandTopic>
-        <jointCommandTopic>joint_command</jointCommandTopic>      
         
         <!-- for each thruster, give the map to XYZ+RPY and the maximum effort -->
         <thruster>
