@@ -24,6 +24,8 @@ class Setpoint:
         Read manual setpoint (jointstate) and extract vehicle part
         '''
         self.received = True
+        # store header
+        self.value.header = msg.header
         # get position setpoint
         self.value.pose.position.x = msg.position[0]
         self.value.pose.position.y = msg.position[1]

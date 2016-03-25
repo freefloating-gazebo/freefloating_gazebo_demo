@@ -11,7 +11,7 @@
     
     <!-- Test body in UWsim with joint_state_publisher -->    
     <group ns='manual_body'>
-    <param name="robot_description" command="$(find xacro)/xacro.py $(find freefloating_gazebo_demo)/urdf/dummy_body.urdf"/>
+    <param name="robot_description" command="$(find xacro)/xacro.py $(find freefloating_gazebo_demo)/urdf/g500_dummy.urdf"/>
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="true">
         <param name="use_gui" value="True"/>
         <remap from="joint_states" to="dummy_body_setpoint"/>
