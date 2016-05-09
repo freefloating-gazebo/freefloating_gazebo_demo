@@ -20,4 +20,3 @@ include_directories(${catkin_INCLUDE_DIRS})
 # demo node
 add_executable(freefloating_gazebo_demo src/freefloating_gazebo_demo.cpp)
 target_link_libraries(freefloating_gazebo_demo ${catkin_LIBRARIES})
-add_dependencies(freefloating_gazebo_demo freefloating_gazebo_generate_messages_cpp)

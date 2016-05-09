@@ -1,5 +1,5 @@
 
-#include <freefloating_gazebo/BodySetpoint.h>
+#include <geometry_msgs/PoseStamped.h>
 #include <sensor_msgs/JointState.h>
 #include <geometry_msgs/Vector3.h>
 #include <nav_msgs/Odometry.h>
@@ -28,7 +28,7 @@ public:
     {
         // init publishers
         arm_publisher_ = _ros_node.advertise<sensor_msgs::JointState>("g500arm5e/joint_setpoint", 1);
-        body_publisher_ = _ros_node.advertise<freefloating_gazebo::BodySetpoint>("g500arm5e/body_setpoint", 1);
+        body_publisher_ = _ros_node.advertise<geometry_msgs::PoseStamped>("g500arm5e/body_position_setpoint", 1);
         joint_setpoint_.name.resize(3);
         joint_setpoint_.name[0] = "Slew";
         joint_setpoint_.name[1] = "Shoulder";
@@ -56,6 +56,7 @@ public:
     void MoveBody(const double &_x, const double &_y, const double &_z, const double &_qx, const double &_qy, const double &_qz, const double &_qw)
     {
         // write message
+        body_setpoint_.header.stamp = ros::Time::now();
         body_setpoint_.pose.position.x = _x;
         body_setpoint_.pose.position.y = _y;
         body_setpoint_.pose.position.z = _z;
@@ -76,12 +77,11 @@ public:
             body_publisher_.publish(body_setpoint_);
     }
 
-
 protected:
     // publishers and messages to be published
     ros::Publisher arm_publisher_, body_publisher_;
     sensor_msgs::JointState joint_setpoint_;
-    freefloating_gazebo::BodySetpoint body_setpoint_;
+    geometry_msgs::PoseStamped body_setpoint_;
     bool arm_has_setpoint_, body_has_setpoint_;
 
     // subscribers and received messages

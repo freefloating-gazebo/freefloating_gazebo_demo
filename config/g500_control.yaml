@@ -2,7 +2,8 @@ controllers:
     config:
         body:
             state: state
-            setpoint: body_setpoint
+            position_setpoint: body_position_setpoint
+            velocity_setpoint: body_velocity_setpoint
             command: body_command
             dynamic_reconfigure: False
     x:
