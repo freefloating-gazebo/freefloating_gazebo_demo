@@ -1,9 +1,9 @@
 freefloating_gazebo_demo
 ========================
 
-This package contains an example of underwater robot using the freefloating_gazebo plugin.
+This package contains two examples of underwater robot using the freefloating_gazebo plugin.
 
-The example can be run in three steps:
+The first example uses UWSim for the rendering and Gazebo for the dynamics. Waypoints are given and followed by a simple PID controller.
 
 1. Synchronize UWsim and Gazebo files (to do once)  
     This will scan the launchfile to create urdf from xacro files to be used in UWsim  
@@ -26,3 +26,6 @@ The example can be run in three steps:
     `roslaunch freefloating_gazebo_demo manual.launch`  
     Two gui will appear, allowing to control the axes of the body and the joints of the arm.
     
+The second example shows how to use steering thrusters and uses Gazebo only (rendering + dynamics):
+	`roslaunch freefloating_gazebo_demo steering_thrusters.launch`
+	Again, two gui will appear to control the thruste forces and two of the thruster orientation. 
