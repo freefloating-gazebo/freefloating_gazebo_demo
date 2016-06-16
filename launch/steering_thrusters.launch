@@ -21,18 +21,18 @@
         <node name="pid_control" pkg="freefloating_gazebo" type="pid_control" output="screen" respawn="true"/>
         
         <!-- Manual control of joints -->
-        <!--node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="true">
+        <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="true">
         <param name="use_gui" value="True"/>
         <remap from="joint_states" to="joint_setpoint" />
-        </node-->
+        </node>
         
         <!-- Manual control of thruster efforts -->
         <group ns="thrusters">
              <param name="robot_description" command="$(find xacro)/xacro --inorder $(find freefloating_gazebo_demo)/urdf/steering_dummy.urdf"/> 
-             <!--node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="true">
+             <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="true">
              <param name="use_gui" value="True"/>
              <remap from="joint_states" to="/steering_auv/body_command" />
-             </node-->
+             </node>
         </group>
     </group>
     
