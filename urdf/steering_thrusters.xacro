@@ -27,7 +27,7 @@
             <parent link="base_link"/>
             <child link="${name}"/>
             <origin rpy="${rpy}" xyz="${xyz}"/>
-            <dynamics damping="10.0"/>
+            <dynamics damping="1.0"/>
             <axis xyz="0 1 0"/>
             <limit effort="30" velocity="5.0" lower="-${PI/2}" upper="${PI/2}" />
         </joint>
