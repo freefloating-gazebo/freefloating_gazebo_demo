@@ -7,7 +7,6 @@ controllers:
             command: body_command
             cascaded_position: False
             dynamic_reconfigure: True
-            use_pid: True
         joints:
             state: joint_states
             setpoint: joint_setpoint

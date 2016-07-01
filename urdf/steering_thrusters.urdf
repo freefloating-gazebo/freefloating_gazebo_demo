@@ -57,11 +57,11 @@
       <damping rpy="20 50 50" xyz="60 100 100"/>
     </buoyancy>
   </link>
-  <joint name="fwd_left" type="revolute">
+  <joint name="fwd_left_j" type="revolute">
     <parent link="base_link"/>
     <child link="fwd_left"/>
     <origin rpy="0 1.57079632679 0" xyz="-0.5 0.18 0"/>
-    <dynamics damping="00.0"/>
+    <dynamics damping="10.0"/>
     <axis xyz="0 1 0"/>
     <limit effort="30" lower="-1.57079632679" upper="1.57079632679" velocity="5.0"/>
   </joint>
@@ -91,14 +91,21 @@
       <inertia ixx=".1" ixy="0.0" ixz="0.0" iyy=".1" iyz="0.0" izz=".1"/>
     </inertial>
   </link>
+  <joint name="fwd_left" type="prismatic">
+    <parent link="fwd_left"/>
+    <child link="fwd_left_virt"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="30" lower="-1.57079632679" upper="1.57079632679" velocity="5.0"/>
+  </joint>
+  <link name="fwd_left_virt"/>
   <gazebo reference="fwd_left">
     <material>Gazebo/Black</material>
   </gazebo>
-  <joint name="fwd_right" type="revolute">
+  <joint name="fwd_right_j" type="revolute">
     <parent link="base_link"/>
     <child link="fwd_right"/>
     <origin rpy="0 1.57079632679 0" xyz="-0.5 -0.18 0"/>
-    <dynamics damping="00.0"/>
+    <dynamics damping="10.0"/>
     <axis xyz="0 1 0"/>
     <limit effort="30" lower="-1.57079632679" upper="1.57079632679" velocity="5.0"/>
   </joint>
@@ -128,6 +135,13 @@
       <inertia ixx=".1" ixy="0.0" ixz="0.0" iyy=".1" iyz="0.0" izz=".1"/>
     </inertial>
   </link>
+  <joint name="fwd_right" type="prismatic">
+    <parent link="fwd_right"/>
+    <child link="fwd_right_virt"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="30" lower="-1.57079632679" upper="1.57079632679" velocity="5.0"/>
+  </joint>
+  <link name="fwd_right_virt"/>
   <gazebo reference="fwd_right">
     <material>Gazebo/Black</material>
   </gazebo>
