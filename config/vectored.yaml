@@ -1,7 +1,7 @@
 controllers:
     config:
         body:
-            control_type: thruster  # cannot be wrench anyway because of steering thrusters
+            control_type: thruster  # cannot be wrench anyway because of vectored thrusters
             state: state
             command: body_command
             cascaded_position: False

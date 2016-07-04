@@ -167,8 +167,6 @@ int main(int argc, char ** argv)
         }
 
         if(state == BODY_UP)
-            break;
+            ros::shutdown();
     }
-
-
 }

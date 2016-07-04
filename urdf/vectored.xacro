@@ -2,7 +2,7 @@
 
 <!-- STL-version of the URDF, used with gazebo for dynamic simulation  -->
 
-<robot name="steering_auv" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="vectored_auv" xmlns:xacro="http://www.ros.org/wiki/xacro">
     
     <xacro:property name="PI" value="3.1415926535897931"/>
     
@@ -128,7 +128,7 @@
                     <compensation>1.01</compensation>
                     <origin xyz= "0 0 0"/>
                     <limit radius="${body_radius}"/>
-                    <damping xyz="60 100 100" rpy="20 50 50"/>
+                    <damping xyz="6 100 100" rpy="20 50 50"/>
                 </buoyancy>               
             </link>
             
