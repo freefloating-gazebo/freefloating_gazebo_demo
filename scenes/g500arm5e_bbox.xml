@@ -122,8 +122,7 @@
     </orientation>
   </object>
 
-  <rosInterfaces>
-      
+  <rosInterfaces>      
     <ROSOdomToPAT>
       <topic> /g500arm5e/state </topic>
       <vehicleName> g500arm5e </vehicleName>

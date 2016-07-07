@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <launch>
     <arg name="gui" default="true"/>
+    <arg name="gz" default="true"/>
 
     <!-- Launch Gazebo with underwater world -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
-        <arg name="gui" value="true" />
+        <arg name="gui" value="$(arg gz)" />
         <arg name="paused" value="true"/>
         <arg name="world_name" value="$(find freefloating_gazebo)/world/underwater.world"/>
     </include>
