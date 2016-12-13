@@ -2,11 +2,11 @@
 
 # modules
 from sensor_msgs.msg import JointState
-from freefloating_gazebo.msg import BodySetpoint
 import rospy, roslib
 import time
 from pylab import pi
 from tf.transformations import quaternion_from_euler
+from geometry_msgs.msg import PoseStamped
 
 class Setpoint:
     '''
@@ -14,14 +14,14 @@ class Setpoint:
     '''
     def __init__(self):
         self.received = False
-        self.value = BodySetpoint()
+        self.value = PoseStamped()
         
         # subscribe to manual setpoints
         rospy.Subscriber('dummy_body_setpoint', JointState, self.read_manual_setpoint)
 
     def read_manual_setpoint(self, msg):
         '''
-        Read manual setpoint (jointstate) and extract vehicle part
+        Read manual setpoint (JointState) and extract vehicle part
         '''
         self.received = True
         # store header
@@ -46,7 +46,7 @@ if __name__ == '__main__':
     rospy.init_node('body_bridge')
     
     # prepare to publish to body setpoint topic
-    setpoint_publisher = rospy.Publisher('/g500arm5e/body_setpoint', BodySetpoint, queue_size=10)
+    setpoint_publisher = rospy.Publisher('/g500arm5e/body_position_setpoint', PoseStamped, queue_size=10)
     
     # init listener to manual setpoint    
     setpoint = Setpoint()

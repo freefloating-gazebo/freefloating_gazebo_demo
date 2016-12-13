@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
 <robot name="body">
+    
   <joint name="x">
-    <limit lower="-10" upper="10"/>
+    <limit lower="-17" upper="23"/>
   </joint>
   <joint name="y">
-    <limit lower="-10.0" upper="10.0"/>
+    <limit lower="-13.5" upper="26.6"/>
   </joint>
   <joint name="z">
-    <limit lower="-12.0" upper="0.0"/>
+    <limit lower="-20.0" upper="0.0"/>
   </joint>
   <joint name="pitch">
     <limit lower="-3.14" upper="3.14"/>
