@@ -1,0 +1,25 @@
+body_position_setpoint:
+    type: geometry_msgs/PoseStamped
+    x: 
+        min: -17
+        max: 23
+        to: pose.position.x
+    y: 
+        min: -13.5
+        max: 26.6
+        to: pose.position.y
+    z: 
+        min: -20
+        max: 0
+        to: pose.position.z
+    pose.orientation.x: 1
+    pose.orientation.w: 1
+    pitch:
+        min: -1
+        max: 1
+        to: pose.orientation.z
+    yaw: 
+        min: -1
+        max: 1
+        to: pose.orientation.y
+        

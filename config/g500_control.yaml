@@ -1,7 +1,6 @@
 controllers:
     config:
         body:
-            control_type: wrench
             state: state
             position_setpoint: body_position_setpoint
             velocity_setpoint: body_velocity_setpoint

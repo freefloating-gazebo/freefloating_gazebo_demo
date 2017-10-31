@@ -28,4 +28,5 @@ The first example uses UWSim for the rendering and Gazebo for the dynamics. Wayp
     
 The second example shows how to use steering thrusters and uses Gazebo only (rendering + dynamics):
 	`roslaunch freefloating_gazebo_demo steering_thrusters.launch`
-	Again, two gui will appear to control the thruste forces and two of the thruster orientation. 
+	Again, two gui will appear to control the thruster forces and two of the thruster orientation. 
+	No PID gains appear in the `vectored.yaml` for the Cartesian directions, inducing a control at the thruster level in Gazebo.
