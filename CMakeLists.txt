@@ -15,6 +15,16 @@ catkin_package(
     nav_msgs
 )
 
+install(DIRECTORY
+  launch
+  objects
+  scenes
+  scripts
+  terrain
+  urdf
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
+
 include_directories(${catkin_INCLUDE_DIRS})
 
 # demo node
