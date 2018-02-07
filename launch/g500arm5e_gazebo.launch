@@ -9,6 +9,11 @@
         <arg name="paused" value="$(arg paused)"/>
         <arg name="world_name" value="$(find freefloating_gazebo)/world/underwater.world"/>
     </include>
+    
+    <!-- add 100 x 100 m turquoise water -->
+    <node name="surface" pkg="freefloating_gazebo" type="surface.py"
+          args="-x 100 -y 100 -g 0.2 -b 1 -a 0.2"
+          />
   
     <!-- include gazebo spawner (generated while parsing uwsim launcher) -->
     <include file="$(find freefloating_gazebo_demo)/launch/g500arm5e_spawner.launch"/>
