@@ -3,14 +3,14 @@
     <!-- Test joints in UWsim with joint_state_publisher -->    
     <group ns='g500arm5e'>    
     
-    <node name="joint_state_gui" pkg="joint_state_publisher" type="joint_state_publisher" respawn="true">
-        <param name="robot_description" command="$(find xacro)/xacro --inorder $(find freefloating_gazebo_demo)/urdf/g500arm5e.xacro"/>
+    <node name="joint_setpoint_gui" pkg="joint_state_publisher" type="joint_state_publisher" respawn="true">
+        <param name="robot_description" command="$(find xacro)/xacro $(find freefloating_gazebo_demo)/urdf/g500arm5e.xacro"/>
         <param name="use_gui" value="True"/>
         <remap from="joint_states" to="/g500arm5e/joint_setpoint" />
     </node>
     
     <!--Pose setpoint-->
-    <node name="body_position_gui" pkg="slider_publisher" type="slider_publisher" output="screen" respawn="true">
+    <node name="body_setpoint_gui" pkg="slider_publisher" type="slider_publisher" output="screen" respawn="true">
         <param name="file" value="$(find freefloating_gazebo_demo)/launch/PoseStampedGUI.yaml"/>
     </node>
     

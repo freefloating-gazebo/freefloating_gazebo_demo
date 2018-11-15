@@ -14,7 +14,7 @@ The first example uses UWSim for the rendering and Gazebo for the dynamics. Wayp
     Gazebo is launched with the freefloating_gazebo_fluid and freefloating_gazebo_control plugins.  
     A pid_control node is also launched and allows position and velocity control of the robot body and joints.  
     - UWsim: `roslaunch freefloating_gazebo_demo g500arm5e.launch`  
-    - Gazebo: `roslaunch freefloating_gazebo_demo g500arm5e_gazebo.launch uwsim:=false`
+    - Gazebo: `roslaunch freefloating_gazebo_demo g500arm5e_gazebo.launch`
     
 3. Run the demo  
     This will unpause the physics (that are paused by default) and run the open-loop recovery of the black box.  

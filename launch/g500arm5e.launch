@@ -23,7 +23,9 @@
         args="$(arg disableShaders) --dataPath $(find freefloating_gazebo_demo) --configfile scenes/g500arm5e_bbox.xml" respawn="true"/>
         
     <!-- launch gazebo without gui -->
-    <include file="$(find freefloating_gazebo_demo)/launch/g500arm5e_gazebo.launch"/>
+    <include file="$(find freefloating_gazebo_demo)/launch/g500arm5e_gazebo.launch">
+        <arg name="uwsim" value="true"/>
+    </include>
     
   </group>
      

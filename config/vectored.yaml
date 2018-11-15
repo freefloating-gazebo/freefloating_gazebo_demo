@@ -1,14 +1,9 @@
 controllers:
     config:
         body:
-            state: state
-            command: thruster_command
             cascaded_position: False
             dynamic_reconfigure: True
         joints:
-            state: joint_states
-            setpoint: joint_setpoint
-            command: joint_command
             cascaded_position: False
             dynamic_reconfigure: True
     fwd_left:
@@ -17,4 +12,4 @@ controllers:
     fwd_right:
         velocity: {p: 20, i: 1, d: 0.0}
         position: {p: 1, i: 0.1, d: 0.5}
-    # no PID gains for body x,y,z,roll,pitch,yaw -> control at the thruser level
+    # no PID gains for body x,y,z,roll,pitch,yaw -> control at the thruster level
