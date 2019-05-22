@@ -14,7 +14,7 @@ controllers:
         position: {p: 10, i: 0.1, d: 0.5}
     JawRotate:
         velocity: {p: 1.0, i: 0.1, d: 0.0}
-        position: {p: 10, i: 0.01, d: 0.5}
+        position: {p: 10, i: 0.1, d: 0.5}
     JawOpening:
         velocity: {p: 1.0, i: 0.1, d: 0.0}
         position: {p: 1, i: 0.01, d: 0.5}

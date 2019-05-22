@@ -7,7 +7,7 @@
   <!-- Arm properties -->
   <xacro:property name="arm_mass" value="1"/>
   <xacro:property name="arm_radius" value="0.10"/>
-  <xacro:property name="jaw_mass" value="0.1"/>
+  <xacro:property name="jaw_mass" value="0.5"/>
   <xacro:property name="jaw_radius" value="0.05"/>  
   <xacro:property name="eps" value="0.00000001"/>
   
@@ -44,8 +44,6 @@
   
   
   <!-- Begin arm joints and links -->
-  
-
   <link name="part0">
     <visual>
       <origin rpy="0.0 0 0" xyz="0 0 0"/>
@@ -134,21 +132,21 @@
     <buoyancy><compensation>1.0</compensation></buoyancy>
   </link>
 
-  <!--<joint name="JawRotate" type="revolute">
+  <joint name="JawRotate" type="revolute">
     <parent link="part3"/>
     <child link="part4_base"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 0" xyz="0.320 0 0.077 "/>
     <dynamics damping="0.8"/>
     <limit lower="${-PI/2}" upper="${PI/2}" velocity="1" effort="200"/>
-    </joint>-->
+    </joint>
     
-    <joint name="JawRotate" type="fixed">
+    <!--<joint name="JawRotate" type="fixed">
     <parent link="part3"/>
     <child link="part4_base"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0 0 0" xyz="0.320 0 0.077 "/>
-    </joint>
+    </joint>-->
     
     <link name="part5">
     <visual>
@@ -158,13 +156,14 @@
       </geometry>
       <material name="orange"/>
     </visual>
-       <collision>
+   <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
        <geometry>
         <cylinder length="0.08" radius="0.01"/>
       </geometry>
     </collision>
     <xacro:cyl_inertial mass=".05" radius=".01" length=".06" />
+    <buoyancy><compensation>1.0</compensation></buoyancy>
     </link>
     
     <joint name="part4_to_5" type="fixed">
@@ -188,6 +187,7 @@
       </geometry>
     </collision>
     <xacro:cyl_inertial mass=".05" radius=".01" length=".06" />
+    <buoyancy><compensation>1.0</compensation></buoyancy>
     </link>
     
     <joint name="part5_to_6" type="fixed">
@@ -209,7 +209,8 @@
         <cylinder length="0.06" radius="0.006"/>
       </geometry>
     </collision>
-    <xacro:cyl_inertial mass=".05" radius=".01" length=".06" />
+    <xacro:cyl_inertial mass=".1" radius=".01" length=".06" />
+    <buoyancy><compensation>1.0</compensation></buoyancy>
     </link>
     
     <joint name="part6_to_7" type="fixed">

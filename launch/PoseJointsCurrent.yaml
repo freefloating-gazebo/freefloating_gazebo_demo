@@ -1,0 +1,56 @@
+body_position_setpoint:
+    type: geometry_msgs/PoseStamped
+    x: 
+        min: -17.
+        max: 23.
+        to: pose.position.x
+    y: 
+        min: -13.5
+        max: 26.6
+        to: pose.position.y
+    z: 
+        min: -20.
+        max: 0.
+        to: pose.position.z
+    pose.orientation.roll: pi
+    pitch:
+        min: -pi/4
+        max: pi/4
+        to: pose.orientation.pitch
+    yaw: 
+        min: -pi
+        max: pi
+        to: pose.orientation.yaw
+joint_setpoint:
+    type: sensor_msgs/JointState
+    name: [Slew, Shoulder, Elbow,JawRotate]
+    Slew: 
+        min: -pi/2
+        max: pi/2
+        to: position[0]
+    Shoulder: 
+        min: 0
+        max: pi/2
+        to: position[1]
+    Elbow: 
+        min: pi/10
+        max: pi/2
+        to: position[2]   
+    Jaw: 
+        min: -pi/2
+        max: pi/2
+        to: position[3]  
+/gazebo/current:
+    type: geometry_msgs/Vector3
+    x: 
+        min: -1.
+        max: 1.
+        to: x
+    y: 
+        min: -1.
+        max: 1.
+        to: y
+    z: 
+        min: -1.
+        max: 1.
+        to: z        
