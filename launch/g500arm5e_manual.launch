@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <launch>
+    
+    <arg name="position" default="true"/>
+    
     <!-- Test joints in UWsim with joint_state_publisher -->    
     <group ns='g500arm5e'>    
     
@@ -10,10 +13,14 @@
     </node>-->
     
     <!--Pose setpoint-->
-    <node name="body_setpoint_gui" pkg="freefloating_gazebo_demo" type="slider_publisher" output="screen" respawn="true">
+    <node name="body_setpoint_gui" pkg="freefloating_gazebo_demo" type="slider_publisher" output="screen" respawn="true" if="$(arg position)">
         <param name="file" value="$(find freefloating_gazebo_demo)/launch/PoseJointsCurrent.yaml"/>
     </node>
     
+    <!--Or velocity setpoint-->
+    <node name="body_setpoint_gui" pkg="freefloating_gazebo_demo" type="slider_publisher" output="screen" respawn="true" unless="$(arg position)">
+        <param name="file" value="$(find freefloating_gazebo_demo)/launch/VelocityJointsCurrent.yaml"/>
+    </node>
     
     </group>
     

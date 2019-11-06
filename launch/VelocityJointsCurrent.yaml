@@ -1,0 +1,56 @@
+body_velocity_setpoint:
+    type: geometry_msgs/TwistStamped
+    x: 
+        min: -1.
+        max: 1.
+        to: twist.linear.x
+    y: 
+        min: -1.
+        max: 1.
+        to: twist.linear.y
+    z: 
+        min: -1.
+        max: 1.
+        to: twist.linear.z
+    twist.angular.x: 0
+    pitch:
+        min: -1
+        max: 1
+        to: twist.angular.y
+    yaw: 
+        min: -1
+        max: 1
+        to: twist.angular.z
+joint_setpoint:
+    type: sensor_msgs/JointState
+    name: [Slew, Shoulder, Elbow,JawRotate]
+    Slew: 
+        min: -pi/2
+        max: pi/2
+        to: position[0]
+    Shoulder: 
+        min: 0
+        max: pi/2
+        to: position[1]
+    Elbow: 
+        min: pi/10
+        max: pi/2
+        to: position[2]   
+    Jaw: 
+        min: -pi/2
+        max: pi/2
+        to: position[3]  
+/gazebo/current:
+    type: geometry_msgs/Vector3
+    x: 
+        min: -1.
+        max: 1.
+        to: x
+    y: 
+        min: -1.
+        max: 1.
+        to: y
+    z: 
+        min: -1.
+        max: 1.
+        to: z        

@@ -103,11 +103,16 @@
 	<box size="1 1 1"/>
       </geometry>
     </collision-->
-  <buoyancy>
-      <compensation>1.01</compensation>
-      <origin xyz= "${X_cog} 0 ${body_height*body_bottom_mass/(2*body_top_mass+body_bottom_mass)/2}"/>
-      <limit radius=".5"/>
-      <damping xyz="60 100 100" rpy="20 50 50"/>
-  </buoyancy>
+    <fluid>
+        <density>1</density>
+        <origin xyz= "${X_cog} 0 ${body_height*body_bottom_mass/(2*body_top_mass+body_bottom_mass)/2}"/>
+        <buoyancy>
+            <compensation>1.01</compensation>    
+            <limit radius="0.5"/>
+        </buoyancy>
+        <hydrodynamics>
+            <drag xyz="60 100 100" rpy="20 50 50" type="linear"/>
+        </hydrodynamics>   
+    </fluid>  
   </link>
 </robot>
